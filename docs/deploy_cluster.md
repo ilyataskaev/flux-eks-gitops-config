@@ -43,3 +43,14 @@ To test this sample repository you need an Amazon EKS cluster with [AWS Load Bal
     ```
 
 You're all set. You can now go to the ![deploy section](../README.md#deploy-this-sample).
+
+```bash
+eksctl create iamserviceaccount \
+--cluster=eks-2023 \
+--namespace=kube-system \
+--name=aws-load-balancer-controller \
+--attach-policy-arn=arn:aws:iam::385379752235:policy/AWSLoadBalancerControllerIAMPolicy \
+--override-existing-serviceaccounts \
+--region eu-central-1 \
+--approve
+```
